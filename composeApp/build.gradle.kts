@@ -40,6 +40,7 @@ kotlin {
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
             implementation(projects.shared)
+            implementation("androidx.navigation:navigation-compose:2.9.6")
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
