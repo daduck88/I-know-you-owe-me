@@ -1,4 +1,3 @@
-import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
@@ -17,6 +16,7 @@ kotlin {
     
     listOf(
         iosArm64(),
+        iosX64(),
         iosSimulatorArm64()
     ).forEach { iosTarget ->
         iosTarget.binaries.framework {
@@ -40,6 +40,7 @@ kotlin {
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
             implementation(projects.shared)
+            implementation(libs.jetbrains.compose.navigation)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -77,4 +78,3 @@ android {
 dependencies {
     debugImplementation(compose.uiTooling)
 }
-
